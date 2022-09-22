@@ -1,0 +1,264 @@
+%\documentclass[12pt,a4paper,twoside,fleqn]{book}
+\documentclass{report}
+\usepackage[subpreambles=true]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{import}
+%\usepackage[a4paper, inner=2.5cm, outer=2.5cm, top=2.5cm,bottom=2.5cm, bindingoffset=1.25cm, twoside]{geometry}
+\usepackage[a4paper, inner=2.5cm, outer=2.5cm, top=3.5cm,bottom=3.5cm, bindingoffset=1.25cm, twoside]{geometry}
+\usepackage{array,longtable}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{color,soul}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{enumitem}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage[round]{natbib}
+\usepackage{array,multirow,multicol}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{ltablex}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage[titletoc]{appendix}
+\usepackage{cite}
+\usepackage{lmodern}
+\usepackage{kpfonts}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{microtype}
+\usepackage{tikz}
+\usepackage{textcase}
+% Load the package with the acronym option
+%\usepackage[acronym]{glossaries}
+%\usepackage{glossaries}
+\usepackage{glossariX}
+\usepackage{breakcites}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{quotchap}
+\usepackage{makecell}
+\usepackage[edges]{forest}
+\usepackage{caption}
+\usepackage{longtable}
+\usetikzlibrary{fit}
+\setcellgapes{5pt}
+\makegapedcells
+\usepackage{fancyhdr}
+%\usepackage[Glenn]{fncychap}
+\usepackage{hyperref}
+\usepackage{array}
+%\usepackage{tabto}
+%\newcolumntype{L}{>{\centering\arraybackslash}m{3cm}}
+
+\pagestyle{fancy}           % Sets fancy header and footer
+%\ChNameUpperCase
+%\ChTitleUpperCase
+%\ChRuleWidth{3pt}
+%\ChTitleVar{\bfseries\Huge\rm}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{} \fancyfoot[CE,CO]{\thepage}
+\fancyhead[RO]{\rightmark}
+\fancyhead[LE]{\leftmark}
+\renewcommand{\headrulewidth}{0.3pt}    % Width of head rule
+\renewcommand{\footrulewidth}{0.1pt}    % Width of head rule
+\addtolength{\headheight}{0.5 pt}
+\fancypagestyle{plain}{%
+	\fancyhead{} %
+	\renewcommand{\headrulewidth}{0pt}    % Width of head rule
+}
+\definecolor{mygrey}{RGB}{192,192,192}
+\definecolor{myblack}{RGB}{0,0,0}
+
+\titleformat{\chapter}[display]
+{\scshape\huge\bfseries\color{myblack}}
+{	\filleft%
+	\begin{tikzpicture}
+	\node[
+	outer sep=0pt,
+	text width=2.5cm,
+	minimum height=3cm,
+	fill=mygrey,
+	font=\color{white}\fontsize{80}{90},
+	%font=\color{white}\fontsize{80}{90}\selectfont,
+	align=center
+	] (num) {\thechapter};
+	\node[
+	rotate=90,
+	anchor=south,
+	font=\color{black}\large
+	%font=\color{black}\Large\normalfont
+	] at ([xshift=-5pt]num.west) {\textls[180]{\textsc{\chaptertitlename}}};  
+	\end{tikzpicture}%
+}
+{10pt}
+{\titlerule[2.5pt]\vskip3pt\titlerule\vskip4pt\LARGE}
+%{\titlerule[2.5pt]\vskip3pt\titlerule\vskip4pt\LARGE\sffamily}
+
+
+\hypersetup{
+	%	colorlinks=true,
+	linkcolor=black,
+	filecolor=red,      
+	urlcolor=cyan,
+} 
+ 
+%\title{Thesis}
+%\author{Author-1}
+%\date{August 2014}
+ 
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Define Your Entries Here
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Generate the glossary
+%\makeglossaries
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{document}
+ 
+	% \maketitle
+	%\cleardoublepage
+	% \section*{Title Page}
+
+	\import{sections/}{FrontPage}
+	\BlankPage
+	\import{sections/}{TitlePage}
+	\BlankPage
+	
+	
+	\section*{\Large \scshape \filcenter Certificate of Approval}
+	\import{sections/}{CertificateOfApproval}
+	\BlankPage
+	
+	%\section*{\hfil \huge Certificate\hfil}
+	\import{sections/}{SupervisorCertificate}
+	\BlankPage
+	
+	\section*{ \Large \scshape \filcenter\scshape Declaration }
+	\import{sections/}{Declaration}
+	\BlankPage	
+	
+	%\section*{\Large \scshape \filcenter Acknowledgements }
+	
+	\chapter*{Acknowledgments}
+	\import{sections/}{Acknowledgements}
+	\BlankPage
+		
+	%\chapter*{Curriculum Vitae}
+	%\import{sections/}{CurriculumVita}
+	%\BlankPage	
+	
+	\chapter*{Abstract}
+	\import{sections/}{Abstract}
+	\BlankPage
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	
+ 	\tableofcontents
+ 	
+ 	\BlankPage
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+ 	%\newpage
+ 	\addcontentsline{toc}{chapter}{\numberline{}List of Figures}
+ 	\listoffigures
+ 	
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	\BlankPage
+ 	%	\newpage
+ 	
+ 	\addcontentsline{toc}{chapter}{\numberline{}List of Tables} 
+ 	\listoftables	
+ 	\BlankPage
+ 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 	%\addcontentsline{toc}{chapter}{\numberline{}List of Abbreviations}
+	%%\printglossary[type=\acronymtype,title={List of Abbreviations}]
+	%\chapter*{List of Abbreviations}
+	%%\renewcommand{\nomname}{}
+	%%\markboth{LIST OF ABBREVIATIONS}{LIST OF SYMBOLS}
+	%\printacronyms[include-classes=abbrev,name=ABBREVIATIONS]
+	%%\printacronyms[include-classes=nomencl,name=SYMBOLS]
+	%
+	%\BlankPage 	
+ 	%
+ 	%\newpage
+	
+ 	%----------------------------------
+	%CHAPTER 
+	%----------------------------------
+	\begin{savequote}[0.55\linewidth]
+		An ounce of prevention is worth a pound of cure.
+		\qauthor{Benjamin Franklin}
+	\end{savequote} 	
+ 	\chapter{Introduction}
+ 	\import{chapters/}{Chapter01}
+
+	\chapter{Literature Review}
+	\import{chapters/}{Chapter02}
+	
+
+	\chapter{Prediction of Adverse Events}
+	\import{chapters/}{Chapter03}
+		
+	
+	\chapter{Predicting Activities of Daily-Living in Real-Time}
+	\import{chapters/}{Chapter04}
+	
+
+	\chapter{Predicting Life Outcomes}
+	\import{chapters/}{Chapter05}
+	
+	\chapter{Designing Preventive Healthcare Services}
+	\import{chapters/}{Chapter06}	
+ 
+	\chapter{Conclusion and Future Work}
+	\import{chapters/}{Chapter07}	
+
+	\addcontentsline{toc}{chapter}{Bibliography}
+	\bibliographystyle{apa-good}%apalike
+	\bibliography{PhDThesis}
+ 
+\titleformat{\chapter}[display]
+{\scshape\huge\bfseries\color{myblack}}
+{	\filleft%
+	\begin{tikzpicture}
+	\node[
+	outer sep=0pt,
+	text width=2.5cm,
+	minimum height=3cm,
+	fill=mygrey,
+	font=\color{white}\fontsize{80}{90},
+	%font=\color{white}\fontsize{80}{90}\selectfont,
+	align=center
+	] (num) {\thechapter};
+	\node[
+	%rotate=90,
+	%anchor=south,
+	font=\color{black}\large
+	%font=\color{black}\Large\normalfont
+	] at ([yshift=18pt]num) {\textls[180]{\textsc{\chaptertitlename}}};  
+	\end{tikzpicture}%
+}
+{10pt}
+{\titlerule[2.5pt]\vskip3pt\titlerule\vskip4pt\LARGE}
+ 	
+ 	
+	\chapter*{Curriculum Vitae}
+	\import{sections/}{CurriculumVita}
+	\BlankPage
+ 
+\end{document}
+

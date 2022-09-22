@@ -1,0 +1,104 @@
+\ProvidesPackage{glossariX}
+\usepackage{acro}
+%\acsetup{first-style=short}
+
+%\DeclareAcroListStyle{mytabular}{table}{
+	%table=longtable,
+	%table-spec=@{}p{2cm}p{\dimexpr\textwidth-2cm-2\tabcolsep}@{},
+%}
+
+\acsetup{list-heading=subsection*} %Means that the acronyms lists are classed as a subsection
+\acsetup{list-style=mytabular}
+
+\newcommand{\nm}[3]{\DeclareAcronym{#1}{short = #2, long = #3, class = abbrev}}
+\newcommand{\nmc}[4]{\DeclareAcronym{#1}{short = #2, long = #3, sort = #4, class = nomencl}}
+\newcommand{\acrfull}[1]{\ac{#1}}
+
+\nm {ICT}{ICT}{Information and Communication Technologies}
+
+%\nm{IIT}{I.I.T.}{Indian Institute of Technology}
+%\nm{KGP}{KGP}{Kharagpur}
+%\nm{EMS}{EMS}{Emergency Medical Services}
+%\nm{ED}{ED}{Emergency Department}
+%\nm{SDL}{SDL}{Service-Dominant Logic}
+%\nm{NHM}{NHM}{National Health Mission}
+%\nm{ABM}{ABM}{Agent-Based Modeling}
+%\nm{ABMS}{ABMS}{Agent Based Modeling and Simulation}
+%\nm{NRHM}{NRHM}{National Rural Health Mission}
+%\nm{NUHM}{NUHM}{National Urban Health Mission}
+%\nm{ERS}{ERS}{Emergency Response Services}
+%\nm{ERC}{ERC}{Emergency Response Center}
+%\nm{NAS}{NAS}{National Ambulance Services}
+%\nm{DSO}{DSO}{Demand-Supply based Operating Logic}
+%\nm{EMT}{EMT}{Emergency Medical Technicians }
+%\nm{PPP}{PPP}{Public Private Partnership}
+%\nm{EMRI}{EMRI}{Emergency Management and Research Institute}
+%\nm{CATS}{CATS}{Centralized Accident and Trauma Services}
+%\nm{NHPP}{NHPP}{Non-Homogenous Poisson Process }
+%\nm{ALS}{ALS}{Advanced Life Support}
+%\nm{BLS}{BLS}{Basic Life Support}
+%\nm{PSAP}{PSAP}{Public Safety Answering Point}
+%\nm{JSSK}{JSSK}{Janani Shishu Suraksha Karyakram}
+%\nm{SVD}{SVD}{Singular Vector Decomposition}
+%\nm{SSA}{SSA}{Singular Spectrum Analysis }
+%\nm{ARMA}{ARMA}{Auto-Regressive Moving Average}
+%\nm{ARIMA}{ARIMA}{Auto-Regressive Integrated Moving Average}
+%\nm{LRF}{LRF}{Linear Recurrent Formula}
+%\nm{ANN}{ANN}{Artificial Neural Network}
+%\nm{GMM}{GMM}{Gaussian Mixture Model}
+%\nm{GIS}{GIS}{Global Information System}
+%\nm{GPS}{GPS}{Geo Position Satellites}
+%\nm{MEXCLP}{MEXCLP}{Maximal Expected Coverage Location Problem}
+%\nm{MCLP}{MCLP}{Maximal Coverage Location Problem}
+%\nm{MCLP-PR}{MCLP-PR}{Maximal Coverage Location Problem with Probabilistic Response time }
+%\nm{MEXCLP-PR}{MEXCLP-PR}{Maximal Expected Coverage Location Problem with Probabilistic Response time}
+%\nm{DPM}{DPM}{District Program Manager}
+%\nm{KMSCL}{KMSCL}{Kerala Medical Service Corporation Limited}
+%\nm{ANOVA}{ANOVA}{Analysis of Variance}
+%\nm{GAM}{GAM}{Generalized Additive Model}
+%\nm{GLM}{GLM}{Generalized Linear Model}
+%\nm{SVM}{SVM}{Support Vector Machine}
+%\nm{RMSE}{RMSE}{Root Mean Square Error}
+%\nm{MDP}{MDP}{Markov Decision Process}
+%\nm{AAS}{AAS}{Anglo-American System}  
+%\nm{FGS}{FGS}{Franco-German System}
+%\nm{IoT}{IoT}{Internet of Things}
+%\nm{SD}{SD}{System Dynamics}
+%\nm{DES}{DES}{Discrete Event Simulation}
+%\nm{SDG}{SDG}{Sustainable Development Goal}
+%\nm{MDG}{MDG}{Millenium Development Goal}
+
+%%Symbols
+%\nmc{m}{$m$}{Number of call neighborhood}{m}
+%\nmc{n}{$n$}{Number of base locations of ambulances}{n}
+%\nmc{q}{$q$}{Number of ambulances}{q}
+%\nmc{tau}{$\tau$}{Response time threshold}{r}
+%\nmc{di}{$d_{i}$}{Demand density at call neighborhood $i$}{d}
+%
+%\nmc{cj}{$c_j$}{Maximum number of ambulances that can be located at base location $j$}{c}
+%\nmc{zj}{$z_j$}{Number of ambulances at base location $j$}{z}
+%\nmc{swp}{$p$}{System-wide busy fraction}{p}
+%\nmc{Pij}{$P_{ij}$}{Coverage Probability}{P}
+%
+%
+%\nmc{lambda}{$\lambda$}{Mean Call Arrival Rate}{l}
+%\nmc{Pi}{$P_{i}$}{Probability of call arrival from district \textit{i}}{P}
+%\nmc{H}{$H$}{High risk level}{H}
+%\nmc{L}{$L$}{Low risk level}{L}
+%\nmc{alpha}{$\alpha$}{Proportion of over-responding}{a}
+%\nmc{delta}{$\delta$}{Maximum number of pseudo high-risk patients}{d}
+%%\nmc{h}{$h\(H,L\)$}{Set of risk level}{h}
+%\nmc{theta1}{$\theta_{1}$}{Lower bound for the equity measure 1}{t}
+%\nmc{theta2}{$\theta_{2}$}{Lower bound for the equity measure 2}{t}
+%\nmc{theta3L}{$\theta_{3L}$}{Lower bound for the equity measure 3}{t}
+%\nmc{theta3H}{$\theta_{3H}$}{Upper bound for the equity measure 3}{t}
+%\nmc{theta4}{$\theta_{4}$}{Lower bound for the equity measure 4}{t}
+%
+%\nmc{M}{$M$}{Markov Decision Process model}{M}
+%\nmc{S}{$S$}{Set of states in a Markov Decision Process}{S}
+%\nmc{A}{$A$}{Set of actions in a Markov Decision Process}{A}
+%\nmc{T}{$T$}{Transition Probability Function  in a Markov Decision Process}{T}
+%\nmc{R}{$R$}{Set of rewards  in a Markov Decision Process}{R}
+%\nmc{gamma}{$\gamma$}{Discount factor in a Markov Decision Process}{g}
+%\nmc{epsilon}{$\epsilon$}{Error margin}{e}
+%
